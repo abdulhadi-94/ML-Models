@@ -5,7 +5,7 @@ import joblib
 # ---------------- Page Config ----------------
 st.set_page_config(
     page_title="Ford Car Price Prediction",
-    page_icon="🚗",
+    page_icon="Ford_logo_only.jpg",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -18,15 +18,19 @@ def get_base64(file):
 
 img = get_base64("background.jpg")
 
+
 page_bg = f"""
 <style>
 
 .stApp {{
+
     background-image: url("data:image/png;base64,{img}");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
     background-color: black;
+    fitler: blur(3px);
+    background-attachment: fixed;
 }}
 
 .block-container{{
@@ -34,6 +38,7 @@ page_bg = f"""
     padding:2rem;
     border-radius:20px;
     border:1px solid rgba(255,255,255,0.15);
+   
 }}
 h1,h2,h3,h4,h5,h6,p,label,span {{
     color:white !important;
@@ -64,6 +69,7 @@ st.markdown(f"""
 <style>
 
 .stApp {{
+   
     background-image: url("data:image/png;base64,{img}");
     background-size: 120%;
     background-repeat: no-repeat;
@@ -153,9 +159,18 @@ Abdul Hadi Shaikh
 """
 )
 
-# ---------------- Header ----------------
+logo = get_base64("Ford_logo_only.jpg")
 
-st.title("🚗 Ford Car Price Prediction")
+st.markdown(f"""
+<div style="display:flex; align-items:center; justify-content:center; gap:15px;">
+    <img src="data:image/png;base64,{logo}" width="90">
+    <h1 style="color:#003478; margin:0;">
+        Ford Car Price Prediction
+    </h1>
+</div>
+""", unsafe_allow_html=True)
+
+# ---------------- Header ----------------
 
 st.write("Fill all vehicle details below and click **Predict Price**.")
 
