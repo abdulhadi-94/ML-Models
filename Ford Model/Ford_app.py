@@ -8,7 +8,7 @@ import joblib
 # ---------------- Page Config ----------------
 st.set_page_config(
     page_title="Ford Car Price Prediction",
-    page_icon="Ford_logo_only.jpg",
+    page_icon="Ford Model/Ford_logo_only.jpg",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -161,7 +161,7 @@ Abdul Hadi Shaikh
 """
 )
 
-logo = get_base64("Ford_logo_only.jpg")
+logo = get_base64("Ford Model/Ford_logo_only.jpg")
 
 st.markdown(f"""
 <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
