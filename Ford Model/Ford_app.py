@@ -1,3 +1,6 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
 import streamlit as st
 import pandas as pd
 import joblib
@@ -136,10 +139,9 @@ div[data-testid="stMetric"]{
 """, unsafe_allow_html=True)
 
 # ---------------- Load Files ----------------
-model = joblib.load("LR_ford_car.pkl")
-scaler = joblib.load("scaler.pkl")
-encoded_columns = joblib.load("columns.pkl")
-
+model = joblib.load(BASE_DIR / "LR_ford_car.pkl")
+scaler = joblib.load(BASE_DIR / "scaler.pkl")
+encoded_columns = joblib.load(BASE_DIR / "columns.pkl")
 # ---------------- Sidebar ----------------
 st.sidebar.image(
     "https://upload.wikimedia.org/wikipedia/commons/3/3e/Ford_logo_flat.svg",
