@@ -10,7 +10,7 @@ import base64
 
 st.set_page_config(
     page_title="Heart Disease Prediction",
-    page_icon="heart_logo.jpg",
+    page_icon=BASE_DIR / "heart_logo.jpg",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
