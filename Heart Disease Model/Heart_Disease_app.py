@@ -104,7 +104,7 @@ scaler = joblib.load(BASE_DIR/"scaler_Heart.pkl")
 columns = joblib.load(BASE_DIR/"columns_Heart.pkl")
 
 # ---------------- Sidebar ----------------
-st.sidebar.image("heart_logo.jpg")
+st.sidebar.image(BASE_DIR / "heart_logo.jpg", width=120)
 st.sidebar.title("❤️ Heart Disease Prediction")
 
 st.sidebar.info("""
