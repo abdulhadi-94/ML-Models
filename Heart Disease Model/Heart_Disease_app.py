@@ -10,9 +10,9 @@ import base64
 
 st.set_page_config(
     page_title="Heart Disease Prediction",
-    page_icon="heart_logo.png",      # Change to your logo
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_icon="Heart Disease Model/heart_logo.jpg",
+    layout="centered",
+    initial_sidebar_state="collapsed"
 )
 
 # ---------------- Background ----------------
@@ -21,27 +21,35 @@ def get_base64(file):
     with open(file, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-img = get_base64("Heart Disease Model/heart_bg.jpg")      # Change to your background
+img = get_base64("Heart Disease Model/heart_bg.jpg")
+logo = get_base64("Heart Disease Model/heart_logo.jpg")
 
 st.markdown(f"""
 <style>
 
-.stApp {{
+/* Background */
+
+.stApp{{
     background-image:url("data:image/png;base64,{img}");
-    background-size:120%;
+    background-size:cover;
     background-repeat:no-repeat;
-    animation:verticalMove 30s ease-in-out infinite alternate;
+    background-position:center;
+    background-attachment:fixed;
+    animation:bgMove 25s ease-in-out infinite alternate;
 }}
 
-@keyframes verticalMove {{
+@keyframes bgMove{{
 0%{{background-position:center top;}}
 100%{{background-position:center bottom;}}
 }}
 
+/* Glass Card */
+
 .block-container{{
-background:rgba(0,0,0,0.35);
+background:rgba(0,0,0,.35);
 padding:2rem;
-border-radius:20px;
+border-radius:25px;
+backdrop-filter:blur(8px);
 }}
 
 h1,h2,h3,h4,h5,h6,p,label,span{{
@@ -55,11 +63,36 @@ font-size:20px;
 font-weight:bold;
 background:#d62828;
 color:white;
-border-radius:10px;
+border-radius:12px;
+border:none;
 }}
 
 .stButton>button:hover{{
 background:#b00020;
+}}
+
+div[data-testid="stMetric"]{{
+background:white;
+padding:15px;
+border-radius:12px;
+}}
+
+@media (max-width:768px){{
+
+.block-container{{
+padding:15px;
+}}
+
+h1{{
+font-size:28px!important;
+text-align:center;
+}}
+
+.stButton>button{{
+height:50px;
+font-size:18px;
+}}
+
 }}
 
 </style>
