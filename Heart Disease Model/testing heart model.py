@@ -2,9 +2,9 @@ import joblib
 import pandas as pd
 
 # Load saved model and preprocessing objects
-model = joblib.load("LR_Heart_disease.pkl")
-scaler = joblib.load("scaler_Heart.pkl")
-columns = joblib.load("columns_Heart.pkl")
+model = joblib.load("Heart Disease Model/LR_Heart_disease.pkl")
+scaler = joblib.load("Heart Disease Model/scaler_Heart.pkl")
+columns = joblib.load("Heart Disease Model/columns_Heart.pkl")
 
 # Sample patient record (replace values if required)
 sample = pd.DataFrame({
