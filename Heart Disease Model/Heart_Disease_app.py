@@ -21,9 +21,8 @@ def get_base64(file):
     with open(file, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-img = get_base64("Heart Disease Model/heart_bg.jpg")
-logo = get_base64("Heart Disease Model/heart_logo.jpg")
-
+img = get_base64(BASE_DIR / "heart_bg.jpg")
+logo = get_base64(BASE_DIR / "heart_logo.jpg")
 st.markdown(f"""
 <style>
 
