@@ -325,4 +325,4 @@ Confidence: {stay_probability:.2f}%
 
 st.divider()
 
-st.caption("© 2026 Credit Card Default Prediction | Built using Streamlit & Scikit-Learn")
+st.caption("© 2026 Customer Churn Prediction | Built using Streamlit & Scikit-Learn")
